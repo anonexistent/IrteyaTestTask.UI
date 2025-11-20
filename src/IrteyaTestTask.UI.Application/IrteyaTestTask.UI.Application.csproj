@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IrteyaTestTask.UI.Infrastructure\IrteyaTestTask.UI.Infrastructure.csproj" />
+    <ProjectReference Include="..\IrteyaTestTask.UI.Services\IrteyaTestTask.UI.Services.csproj" />
+  </ItemGroup>
+
+</Project>

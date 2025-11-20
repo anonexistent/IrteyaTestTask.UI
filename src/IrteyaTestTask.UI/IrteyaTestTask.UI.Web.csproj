@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\IrteyaTestTask.UI.Application\IrteyaTestTask.UI.Application.csproj" />
+		<ProjectReference Include="..\IrteyaTestTask.UI.Domain\IrteyaTestTask.UI.Domain.csproj" />
+		<ProjectReference Include="..\IrteyaTestTask.UI.Infrastructure\IrteyaTestTask.UI.Infrastructure.csproj" />
+		<ProjectReference Include="..\IrteyaTestTask.UI.Services\IrteyaTestTask.UI.Services.csproj" />
+	</ItemGroup>
+
+</Project>

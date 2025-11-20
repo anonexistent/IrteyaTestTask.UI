@@ -1,0 +1,45 @@
+﻿@page "/weather"
+@using IrteyaTestTask.UI.Domain.Models
+@using IrteyaTestTask.UI.Services
+@inject IWeatherService WeatherService
+
+<PageTitle>Weather</PageTitle>
+
+<h3>Weather forecast</h3>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in forecasts)
+            {
+                <tr>
+                    <td>@item.Date</td>
+                    <td>@item.TemperatureC</td>
+                    <td>@item.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IReadOnlyList<WeatherForecast>? forecasts;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await WeatherService.GetForecastAsync();
+    }
+}
