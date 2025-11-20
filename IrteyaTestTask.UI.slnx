@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src\IrteyaTestTask.UI.Application/IrteyaTestTask.UI.Application.csproj" Id="2cab5401-c8ee-4a89-8298-cfc5e0df73ad" />
+  <Project Path="src\IrteyaTestTask.UI.Domain/IrteyaTestTask.UI.Domain.csproj" Id="2e71a586-6455-4df4-b9f5-80db7da72a7d" />
+  <Project Path="src\IrteyaTestTask.UI.Infrastructure/IrteyaTestTask.UI.Infrastructure.csproj" Id="e56b99f8-d82f-4192-b67b-adbe1d3817a4" />
+  <Project Path="src\IrteyaTestTask.UI.Services/IrteyaTestTask.UI.Services.csproj" Id="a0a0d17c-7ced-49ac-a38b-fce5c40def8c" />
+  <Project Path="src\IrteyaTestTask.UI/IrteyaTestTask.UI.Web.csproj" />
+</Solution>
