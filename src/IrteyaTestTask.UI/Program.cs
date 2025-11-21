@@ -41,6 +41,7 @@ app.MapRazorComponents<App>()
 
 using (var scope = app.Services.CreateScope())
 {
+    var rnd = new Random();
     var db = scope.ServiceProvider.GetRequiredService<WeatherDbContext>();
     db.Database.Migrate();
 
@@ -48,11 +49,13 @@ using (var scope = app.Services.CreateScope())
     {
         db.Weather.AddRange(
         [
-            new WeatherForecast { Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)), TemperatureC = 10, Summary = "Cloudy" },
-            new WeatherForecast { Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(2)), TemperatureC = 15, Summary = "Warm" },
-            new WeatherForecast { Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(3)), TemperatureC = 22, Summary = "Sunny" },
+            .. Enumerable.Range(1, 10).Select(i => new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(i)),
+                TemperatureC = rnd.Next(-20, 35),
+                Summary = rnd.Next() % 2 == 0 ? "Sunny" : "Cloudy",
+            })
         ]);
-
 
         db.SaveChanges();
     }
