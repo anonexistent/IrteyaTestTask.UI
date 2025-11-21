@@ -41,24 +41,8 @@ app.MapRazorComponents<App>()
 
 using (var scope = app.Services.CreateScope())
 {
-    var rnd = new Random();
     var db = scope.ServiceProvider.GetRequiredService<WeatherDbContext>();
-    db.Database.Migrate();
-
-    if (!db.Weather.Any())
-    {
-        db.Weather.AddRange(
-        [
-            .. Enumerable.Range(1, 10).Select(i => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(i)),
-                TemperatureC = rnd.Next(-20, 35),
-                Summary = rnd.Next() % 2 == 0 ? "Sunny" : "Cloudy",
-            })
-        ]);
-
-        db.SaveChanges();
-    }
+    //db.Database.Migrate();
 }
 
 app.Run();
